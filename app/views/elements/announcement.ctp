@@ -29,10 +29,15 @@ if (Configure::read('Announcement.enabled')) {
     echo $javascript->link(JS_PATH . 'jquery.cookie.js');
     echo $javascript->link(JS_PATH . 'announcement.js');
 
-    $announcementId = 'announcement-id';
-    $announcementText = 'Text of the announcement';
+    $announcementId = 'tatoeba-day-20151219';
+    $announcementText = 'Today is Tatoeba Day!
+        We are interested in your user stories.<br><br>';
+    $announcementText .= $html->link(
+        '▶ Learn more', 'https://tatoeba.org/eng/wall/show_message/25090',
+        array('class' => 'close')
+    );
 
-    $closeButton = $html->div('close', $images->svgIcon('close'));
+    $closeButton = $html->div('close button', $images->svgIcon('close'));
     $content = $html->div('content', $announcementText);
 
     echo $html->div(
